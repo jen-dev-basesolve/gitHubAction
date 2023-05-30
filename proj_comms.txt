@@ -1,0 +1,7 @@
+what are github actions?
+- They are series of actions when github is triggered. They are used to automate workflows.
+
+workflows - 
+- Automated process that runs multiple jobs
+- they are stored in ./github/workflows
+
