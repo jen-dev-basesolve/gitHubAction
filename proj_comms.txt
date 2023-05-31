@@ -5,3 +5,12 @@ workflows -
 - Automated process that runs multiple jobs
 - they are stored in ./github/workflows
 
+what are webhooks?
+webhooks are automated messages sent from apps whenevher there is a trigger.
+
+----------------
+Jira's method to change status of the ticket
+https://confluence.atlassian.com/adminjiraserver/configuring-workflow-triggers-938847513.html
+
+-------------------------
+
