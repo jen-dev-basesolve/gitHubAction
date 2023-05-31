@@ -1,5 +1,8 @@
-on: [push]
-
+name: jira action workflow
+on:
+  push:
+    branches: 
+      - main
 jobs:
   new_push_job:
     runs-on: ubuntu-latest
@@ -13,3 +16,16 @@ jobs:
         slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}" # The message you want to post
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+    
+    - name: Login
+      uses: atlassian/gajira-login@v3
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        
+    - name: Transition issue
+      uses: atlassian/gajira-transition@v3
+      with:
+        issue: ACT-3
+        transition: "Deployed"
