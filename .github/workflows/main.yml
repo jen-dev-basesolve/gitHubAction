@@ -12,4 +12,4 @@ jobs:
         channel-id: 'D04NUC7S31V' # ID of Slack Channel you want to post to
         slack-message: 'posting from a github action!' # The message you want to post
       env:
-        SLACK_BOT_TOKEN: ${{ secrets.slack_bot_token }}
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
