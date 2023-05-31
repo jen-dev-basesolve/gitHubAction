@@ -27,5 +27,5 @@ jobs:
     - name: Transition issue
       uses: atlassian/gajira-transition@v3
       with:
-        issue: ${{ webhookData.ref.substringAfterLast("/")}}
+        issue: ${{ github.ref}}
         transition: "Deployed"
