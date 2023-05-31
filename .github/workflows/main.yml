@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  new_push_job:
+    runs-on: ubuntu-latest
+    name: New push to repo
+    steps:
+    - name: Publish to slack channel via bot token
+      id: slack
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        channel-id: 'C04NUCHSWVD' # ID of Slack Channel you want to post to
+        slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}" # The message you want to post
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
