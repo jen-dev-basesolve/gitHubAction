@@ -1,3 +1,1 @@
-Created a new automation, so that whenever there is a merge request, the status changes to deployed.
-Created a new automation, so that whenever there is a merge request, the status changes to deployed.
-Created a new automation, so that whenever there is a merge request, the status changes to deployed.
+Find issue by branch name
