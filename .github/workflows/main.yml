@@ -9,7 +9,7 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
       with:
-        channel-id: 'C04NUCHSWVD' # ID of Slack Channel you want to post to
+        channel-id: 'C059T6Z4U79' # ID of Slack Channel you want to post to
         slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}" # The message you want to post
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
